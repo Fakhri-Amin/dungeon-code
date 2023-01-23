@@ -59,7 +59,7 @@ public class CollisionHandler : MonoBehaviour
             {
                 Debug.Log("We hit Rune Goal!");
                 if (GameManager.Instance.isRunning) return;
-
+                BE2_ExecutionManager.Instance.Stop();
                 winLoseManager.SetWinUI();
             }
         }
