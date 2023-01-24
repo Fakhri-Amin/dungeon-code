@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 182, y: 80}
+  m_SizeDelta: {x: 189, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850242043931716068
 MonoBehaviour:
@@ -119,7 +119,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 386, y: -357}
-  m_SizeDelta: {x: 182, y: 80}
+  m_SizeDelta: {x: 189, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1850242044121629618
 MonoBehaviour:
@@ -325,7 +325,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 182, y: 80}
+  m_SizeDelta: {x: 189, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1850242044395228435
 CanvasRenderer:
@@ -441,7 +441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 91, y: 0}
+  m_AnchoredPosition: {x: 94.5, y: 0}
   m_SizeDelta: {x: 0, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1850242045731873717
@@ -485,7 +485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Move Foward
+  m_Text: Maju kedepan
 --- !u!114 &1850242045731873723
 MonoBehaviour:
   m_ObjectHideFlags: 0

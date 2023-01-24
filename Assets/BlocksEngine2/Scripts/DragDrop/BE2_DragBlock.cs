@@ -144,6 +144,8 @@ namespace MG_BlocksEngine2.DragDrop
 
             // v2.9 - bugfix: TargetObject of blocks being null
             Block.Instruction.InstructionBase.UpdateTargetObject();
+
+            BE2_AudioManager.instance.PlaySound(1);
         }
     }
 }

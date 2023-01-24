@@ -74,9 +74,9 @@ public class BE2_Ins_TurnDirection : BE2_InstructionBase, I_BE2_Instruction
         // returns the look direction based on the string value
         switch (option)
         {
-            case "Right":
+            case "Kanan":
                 return new Vector3(0, 90f, 0);
-            case "Left":
+            case "Kiri":
                 return new Vector3(0, -90f, 0);
             default:
                 return Vector3.zero;
