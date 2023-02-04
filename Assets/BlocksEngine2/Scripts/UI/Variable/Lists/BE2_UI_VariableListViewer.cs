@@ -88,7 +88,7 @@ namespace MG_BlocksEngine2.UI
         {
             yield return new WaitForEndOfFrame();
             List<string> list = BE2_VariablesListManager.instance.GetListStringValues(listName);
-            
+
             for (int i = 0; i < 10000; i++)
             {
                 BE2_UI_ListItem item = _panelList.GetChild(i).GetComponent<BE2_UI_ListItem>();
@@ -154,6 +154,7 @@ namespace MG_BlocksEngine2.UI
             listItem.SetSiblingIndex(_panelList.childCount - 2);
 
             BE2_UI_ListItem item = listItem.GetComponent<BE2_UI_ListItem>();
+
             item.inputField.text = value;
             if (select)
                 item.inputField.Select();

@@ -11,5 +11,7 @@ namespace MG_BlocksEngine2.Environment
         I_BE2_ProgrammingEnv ProgrammingEnv { get; set; }
 
         void SetActiveStatus(bool condition);
+
+        bool GetSidewayInfo(Vector3 direction);
     }
 }

@@ -6,6 +6,8 @@ public class WinLoseManager : MonoBehaviour
 {
     [SerializeField] private GameObject winUI;
 
+    [SerializeField] private GameObject winVFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,12 @@ public class WinLoseManager : MonoBehaviour
 
     }
 
-    public void SetWinUI()
+    public void SetWinCondition()
     {
-        Invoke("Go", 1f);
+        var vfx = Instantiate(winVFX, transform.position, Quaternion.identity);
+        Destroy(vfx, 3f);
+
+        Invoke("Go", 3f);
     }
 
     private void Go()

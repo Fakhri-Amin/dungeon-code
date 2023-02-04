@@ -26,6 +26,7 @@ namespace MG_BlocksEngine2.Block.Instruction
         protected virtual void OnButtonStop() { }
         public virtual void OnPrepareToPlay() { }
         public virtual void OnStackActive() { }
+        private CollisionHandler collisionHandler;
 
         void Awake()
         {
@@ -33,6 +34,7 @@ namespace MG_BlocksEngine2.Block.Instruction
             Instruction = GetComponent<I_BE2_Instruction>();
             Block = GetComponent<I_BE2_Block>();
             _blockLayout = GetComponent<I_BE2_BlockLayout>();
+            collisionHandler = FindObjectOfType<CollisionHandler>();
 
             if (Block.Type == BlockTypeEnum.trigger)
             {
@@ -184,6 +186,13 @@ namespace MG_BlocksEngine2.Block.Instruction
                         BlocksStack.IsActive = false;
                     }
                 }
+
+                if (GameManager.Instance.isNoDelay)
+                {
+                    collisionHandler.CheckRuneGoal();
+                    collisionHandler.CheckNumberList();
+                }
+
             }
             else
             {
@@ -196,6 +205,8 @@ namespace MG_BlocksEngine2.Block.Instruction
                         BlocksStack.InstructionsArray[0].Function();
                     }
                 }
+                collisionHandler.CheckNumberList();
+                collisionHandler.CheckRuneGoal();
             }
         }
 

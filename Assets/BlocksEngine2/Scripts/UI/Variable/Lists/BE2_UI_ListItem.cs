@@ -18,20 +18,20 @@ namespace MG_BlocksEngine2.UI
         void Awake()
         {
             _variableListViewer = GetComponentInParent<BE2_UI_VariableListViewer>();
-            inputField = transform.GetChild(0).GetComponent<InputField>();
-            _removeItemButton = transform.GetChild(1).GetComponent<Button>();
+            // inputField = transform.GetChild(0).GetComponent<InputField>();
+            // _removeItemButton = transform.GetChild(1).GetComponent<Button>();
         }
 
         void OnEnable()
         {
-            inputField.onEndEdit.AddListener(delegate { _variableListViewer.UpdateListValues(); });
-            _removeItemButton.onClick.AddListener(RemoveItem);
+            // inputField.onEndEdit.AddListener(delegate { _variableListViewer.UpdateListValues(); });
+            // _removeItemButton.onClick.AddListener(RemoveItem);
         }
 
         void OnDisable()
         {
-            inputField.onEndEdit.RemoveAllListeners();
-            _removeItemButton.onClick.RemoveAllListeners();
+            // inputField.onEndEdit.RemoveAllListeners();
+            // _removeItemButton.onClick.RemoveAllListeners();
         }
 
         void Start()

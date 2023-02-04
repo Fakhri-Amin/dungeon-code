@@ -20,5 +20,6 @@ public class BE2_Ins_RepeatForever : BE2_InstructionBase, I_BE2_Instruction
     public new void Function()
     {
         ExecuteSection(0);
+        GameManager.Instance.isNoDelay = true;
     }
 }
