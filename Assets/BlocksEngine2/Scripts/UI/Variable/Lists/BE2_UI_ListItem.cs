@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 using MG_BlocksEngine2.Utils;
 using MG_BlocksEngine2.Core;
@@ -13,6 +14,7 @@ namespace MG_BlocksEngine2.UI
     {
         BE2_UI_VariableListViewer _variableListViewer;
         public InputField inputField;
+        [SerializeField] private GameObject explosionVFX;
         Button _removeItemButton;
 
         void Awake()
@@ -26,6 +28,10 @@ namespace MG_BlocksEngine2.UI
         {
             // inputField.onEndEdit.AddListener(delegate { _variableListViewer.UpdateListValues(); });
             // _removeItemButton.onClick.AddListener(RemoveItem);
+            transform.DOScale(Vector3.one * 1.75f, 0.2f).SetEase(Ease.InOutExpo).OnComplete(() =>
+            {
+                transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.InExpo);
+            });
         }
 
         void OnDisable()

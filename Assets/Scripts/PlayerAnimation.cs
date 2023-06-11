@@ -28,4 +28,9 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator.SetBool("Die", condition);
     }
+
+    public void SetReachedAnimation(bool condition)
+    {
+        animator.SetBool("IsReached", condition);
+    }
 }

@@ -52,12 +52,12 @@ namespace MG_BlocksEngine2.UI
 #if UNITY_EDITOR
         void Update()
         {
-            if (addBlock)
-            {
-                AddBlockToPanel(blockToAddTransform, selectionPanelsList[panelIndex]);
-                addBlock = false;
-            }
-            ForceRebuildLayout();
+            // if (addBlock)
+            // {
+            //     AddBlockToPanel(blockToAddTransform, selectionPanelsList[panelIndex]);
+            //     addBlock = false;
+            // }
+            // ForceRebuildLayout();
         }
 #endif
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Globalization;
+using DG.Tweening;
 
 using MG_BlocksEngine2.Core;
 using MG_BlocksEngine2.Block;
@@ -14,6 +15,7 @@ namespace MG_BlocksEngine2.Environment
     {
         public static BE2_VariablesListManager instance;
         public BE2_UI_NewVariableListPanel newListPanel;
+
         /// <summary>
         /// [list name, value]
         /// </summary>

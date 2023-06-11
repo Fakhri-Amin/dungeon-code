@@ -78,6 +78,7 @@ namespace MG_BlocksEngine2.DragDrop
             }
             else if (spot is BE2_SpotOuterArea)
             {
+
                 ghostBlockTransform.SetParent(spot.Block.Transform.parent);
                 ghostBlockTransform.localScale = Vector3.one;
                 ghostBlockTransform.gameObject.SetActive(true);
@@ -97,6 +98,8 @@ namespace MG_BlocksEngine2.DragDrop
             // v2.6 - adjustments on position and angle of blocks for supporting all canvas render modes
             ghostBlockTransform.localPosition = new Vector3(ghostBlockTransform.localPosition.x, ghostBlockTransform.localPosition.y, 0);
             ghostBlockTransform.localEulerAngles = Vector3.zero;
+
+            _dragDropManager.SetTrashUIOn(true);
         }
 
         public void OnPointerUp()
@@ -136,6 +139,7 @@ namespace MG_BlocksEngine2.DragDrop
                 {
                     Destroy(Transform.gameObject);
                 }
+
             }
 
             // v2.6 - adjustments on position and angle of blocks for supporting all canvas render modes
@@ -146,6 +150,7 @@ namespace MG_BlocksEngine2.DragDrop
             Block.Instruction.InstructionBase.UpdateTargetObject();
 
             BE2_AudioManager.instance.PlaySound(1);
+            _dragDropManager.SetTrashUIOn(false);
         }
     }
 }

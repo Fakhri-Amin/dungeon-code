@@ -31,14 +31,28 @@ namespace MG_BlocksEngine2.Environment
 
         public bool GetSidewayInfo(Vector3 direction)
         {
+            Debug.DrawRay(Transform.position + Vector3.up * 0.5f, direction, Color.yellow);
             RaycastHit hit;
-            if (!Physics.Raycast(Transform.position + Vector3.up * 0.5f, direction, out hit, 1f))
+
+            if (Physics.Raycast(Transform.position + Vector3.up * 0.5f, direction, out hit, 1f))
             {
-                Debug.Log("There's a path to go!");
-                Debug.DrawRay(Transform.position + Vector3.up * 0.5f, direction, Color.yellow);
+                if (hit.collider.gameObject.TryGetComponent<RotatingItem>(out RotatingItem rotatingItem))
+                {
+                    return true;
+                }
+
+                if (hit.collider.gameObject.TryGetComponent<NumberCollectableItem>(out NumberCollectableItem number))
+                {
+                    return true;
+                }
+
+                // Debug.Log("There's a path to go!");
+                return false;
+            }
+            else
+            {
                 return true;
             }
-            return false;
         }
     }
 }

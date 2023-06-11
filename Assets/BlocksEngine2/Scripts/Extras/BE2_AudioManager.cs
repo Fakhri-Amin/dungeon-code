@@ -16,6 +16,12 @@ namespace MG_BlocksEngine2.Environment
             {
                 instance = this;
             }
+
+        }
+
+        private void Start()
+        {
+            source.mute = !GameMusicPlayer.Instance.isSFXOn;
         }
 
         public void PlaySound(int audioIndex)

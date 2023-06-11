@@ -192,7 +192,6 @@ namespace MG_BlocksEngine2.Block.Instruction
                     collisionHandler.CheckRuneGoal();
                     collisionHandler.CheckNumberList();
                 }
-
             }
             else
             {

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 64354054029824500}
   - component: {fileID: 1230567979}
   - component: {fileID: 1230567984}
+  - component: {fileID: 4892845012497775947}
+  - component: {fileID: 5142508405186707574}
   m_Layer: 0
   m_Name: SM_Prop_Skeleton_Slave_Wall_Sitting_01
   m_TagString: Untagged
@@ -114,6 +116,31 @@ BoxCollider:
   m_Size: {x: 0.86098456, y: 1.0060365, z: 1.0682563}
   m_Center: {x: -0.03018637, y: 0.4658211, z: 0.15139972}
 --- !u!114 &1230567984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9725e7c912b854fb22e6faa53c27a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4892845012497775947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.86098456, y: 1.0060365, z: 0.9981153}
+  m_Center: {x: -0.030186355, y: 0.4658211, z: 0.11632931}
+--- !u!114 &5142508405186707574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

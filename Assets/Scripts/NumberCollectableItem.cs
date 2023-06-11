@@ -25,6 +25,7 @@ public class NumberCollectableItem : MonoBehaviour
 
         if (isOnce) return;
         BE2_VariablesListManager.instance.AddValueInList("Daftar angka", number.ToString());
+        BE2_AudioManager.instance.PlaySound(3);
         gameObject.SetActive(false);
         isOnce = true;
     }

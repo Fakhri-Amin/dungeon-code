@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using MG_BlocksEngine2.Core;
 using MG_BlocksEngine2.Environment;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     private Vector3 playerPosition;
     private Vector3 playerRotation;
     private RotatingItem rotatingItem;
+    private CollisionHandler collisionHandler;
 
     protected virtual void OnButtonPlay() { }
     protected virtual void OnButtonStop() { }
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<GameObjectStorage>().GetPlayer();
         playerAnimation = FindObjectOfType<PlayerAnimation>();
         rotatingItem = FindObjectOfType<RotatingItem>();
+        collisionHandler = FindObjectOfType<CollisionHandler>();
         // collisionHandler = FindObjectOfType<CollisionHandler>();
     }
 
@@ -59,6 +62,8 @@ public class GameManager : MonoBehaviour
         player.transform.position = playerPosition;
         player.transform.rotation = Quaternion.Euler(playerRotation);
         playerAnimation.SetDieAnimation(false);
+        playerAnimation.SetReachedAnimation(false);
+        collisionHandler.isPlayed = false;
 
         foreach (NumberCollectableItem number in numberArrays)
         {

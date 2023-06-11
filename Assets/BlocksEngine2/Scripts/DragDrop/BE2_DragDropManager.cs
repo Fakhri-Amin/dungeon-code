@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 using MG_BlocksEngine2.Block;
 using MG_BlocksEngine2.Core;
@@ -69,6 +70,8 @@ namespace MG_BlocksEngine2.DragDrop
             }
         }
 
+        [SerializeField] private CanvasGroup trashIconUI;
+
         void OnEnable()
         {
             Instance = this;
@@ -82,6 +85,7 @@ namespace MG_BlocksEngine2.DragDrop
 
         void Start()
         {
+            trashIconUI.gameObject.SetActive(false);
             _contextMenuManager = BE2_UI_ContextMenuManager.instance;
 
             BE2_MainEventsManager.Instance.StartListening(BE2EventTypes.OnPrimaryKeyDown, OnPointerDown);
@@ -127,6 +131,7 @@ namespace MG_BlocksEngine2.DragDrop
             {
                 CurrentDrag.OnDrag();
                 isDragging = true;
+
             }
         }
 
@@ -155,6 +160,24 @@ namespace MG_BlocksEngine2.DragDrop
         {
             if (SpotsList.Contains(spot))
                 SpotsList.Remove(spot);
+        }
+
+        public void SetTrashUIOn(bool condition)
+        {
+            if (condition)
+            {
+                trashIconUI.gameObject.SetActive(true);
+                trashIconUI.DOFade(1, 0.2f).SetEase(Ease.OutExpo).SetDelay(0.3f);
+                trashIconUI.transform.GetChild(1).DOLocalRotate(new Vector3(0, 0, -8f), 0.2f).SetDelay(0.2f);
+            }
+            else
+            {
+                trashIconUI.DOFade(0, 0.2f).SetEase(Ease.InExpo).OnComplete(() =>
+                {
+                    trashIconUI.transform.GetChild(1).localEulerAngles = Vector3.zero;
+                    trashIconUI.gameObject.SetActive(false);
+                });
+            }
         }
     }
 }

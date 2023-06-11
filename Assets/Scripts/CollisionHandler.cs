@@ -12,16 +12,18 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] private float itemDetectRange = 0.5f;
     private WinLoseManager winLoseManager;
     private PlayerAnimation playerAnimation;
+    private Animator animator;
 
     protected virtual void OnButtonPlay() { }
     protected virtual void OnButtonStop() { }
 
-    private bool isPlayed;
+    public bool isPlayed;
 
     private void Awake()
     {
         winLoseManager = GetComponent<WinLoseManager>();
         playerAnimation = GetComponent<PlayerAnimation>();
+        animator = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -41,11 +43,10 @@ public class CollisionHandler : MonoBehaviour
     private void GetObstacleInfo()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.forward, out hit, obstacleDetectRange))
+        if (Physics.Raycast(transform.position + Vector3.up * 0.25f, transform.forward, out hit, obstacleDetectRange) || Physics.Raycast(transform.position + Vector3.up * 0.25f, -transform.forward, out hit, obstacleDetectRange))
         {
             if (hit.collider.gameObject.GetComponent<Obstacle>())
             {
-                Debug.Log("There is an obstacle!");
                 playerAnimation.SetDieAnimation(true);
                 BE2_ExecutionManager.Instance.Stop();
             }
@@ -60,13 +61,11 @@ public class CollisionHandler : MonoBehaviour
         {
             if (hit.collider.gameObject.TryGetComponent<RotatingItem>(out RotatingItem rotatingItem))
             {
-                Debug.Log("We hit the book!");
                 rotatingItem.Destroyed();
             }
 
             if (hit.collider.gameObject.TryGetComponent<NumberCollectableItem>(out NumberCollectableItem numberCollectableItem))
             {
-                Debug.Log("We hit the number item!");
                 numberCollectableItem.Destroyed();
             }
         }
@@ -90,9 +89,6 @@ public class CollisionHandler : MonoBehaviour
 
         for (int i = 0; i < variableManager.GetListStringValues(listName).Count; i++)
         {
-            Debug.Log("GetListValue = " + variableManager.GetListValue(listName, i).floatValue);
-            Debug.Log("Number list[i] = " + numberList[i]);
-
             if (variableManager.GetListValue(listName, i).floatValue != numberList[i])
             {
                 return;
@@ -104,9 +100,9 @@ public class CollisionHandler : MonoBehaviour
         }
 
         StopTheExecution();
+        playerAnimation.SetReachedAnimation(true);
         if (isPlayed) return;
-        winLoseManager.SetWinCondition();
-        BE2_AudioManager.instance.PlaySound(2);
+        StartCoroutine(winLoseManager.SetWinCondition());
         isPlayed = true;
     }
 
@@ -117,14 +113,14 @@ public class CollisionHandler : MonoBehaviour
         {
             if (hit.collider.gameObject.GetComponent<RuneGoal>())
             {
-                Debug.Log("We hit Rune Goal!");
                 StopTheExecution();
+                playerAnimation.SetReachedAnimation(true);
                 if (isPlayed) return;
-                winLoseManager.SetWinCondition();
-                BE2_AudioManager.instance.PlaySound(2);
+                StartCoroutine(winLoseManager.SetWinCondition());
                 isPlayed = true;
             }
         }
+
     }
 }
 
