@@ -5,14 +5,17 @@ using DG.Tweening;
 
 public class DialogBox : MonoBehaviour
 {
-    [SerializeField] private Transform box;
+    [SerializeField] private Transform[] boxes;
     [SerializeField] private CanvasGroup background;
 
     private void OnEnable()
     {
         // LeanTween.cancel(gameObject);
         background.alpha = 0;
-        box.localPosition = new Vector3(0, -Screen.height, box.localPosition.z);
+        foreach (var box in boxes)
+        {
+            box.localPosition = new Vector3(box.localPosition.x, -Screen.height, box.localPosition.z);
+        }
 
         // LeanTween
         // LeanTween.alphaCanvas(background, 1.0f, 0.5f);
@@ -20,7 +23,10 @@ public class DialogBox : MonoBehaviour
 
         // DoTween
         background.DOFade(1, 0.5f);
-        box.DOLocalMoveY(0, 0.5f).SetEase(Ease.OutExpo).SetDelay(0.1f);
+        foreach (var box in boxes)
+        {
+            box.DOLocalMoveY(0, 0.5f).SetEase(Ease.OutExpo).SetDelay(0.1f);
+        }
     }
 
     public void CloseDialog()
@@ -31,8 +37,10 @@ public class DialogBox : MonoBehaviour
 
         // DoTween
         background.DOFade(0, 0.5f);
-        box.DOLocalMoveY(-Screen.height, 0.5f).SetEase(Ease.InExpo).OnComplete(OnceComplete);
-
+        foreach (var box in boxes)
+        {
+            box.DOLocalMoveY(-Screen.height, 0.5f).SetEase(Ease.InExpo).OnComplete(OnceComplete);
+        }
     }
 
     private void OnceComplete()
