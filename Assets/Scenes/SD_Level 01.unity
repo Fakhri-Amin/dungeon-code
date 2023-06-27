@@ -4773,9 +4773,24 @@ PrefabInstance:
     - target: {fileID: 352075899718833799, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
         type: 3}
       propertyPath: m_text
-      value: "Daftar angka ini merupakan contoh dari Stack dan Queue di struktur
-        data. \n\nStack [dibaca stek] merupakan tumpukan.\nQueue [dibaca kyu] merupakan
-        antrian.\n\n"
+      value: "Daftar angka ini merupakan konsep yang terdapat pada Stack dan Queue.\n\nStack
+        atau tumpukan dapat diartikan sebagai suatu kumpulan data yang terlihat seperti
+        data yang diletakkan di atas data yang lain hingga terbentuk seperti tumpukan.
+        \n\nQueue atau antrian merupakan suatu struktur data linier dimana penambahan
+        elemen dilakukan di satu ujung, sementara pengurangan dilakukan diujung lain
+        selayaknya sebuah antrian.\n\nProses ketika kamu mengambil angka tersebut
+        dan dimasukkan ke kumpulan data dinamakan Push pada Stack, dan dinamakan
+        Enqueue pada Queue.\n\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 352075899718833799, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 27.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 352075899718833799, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 27.6
       objectReference: {fileID: 0}
     - target: {fileID: 691932737076102500, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
         type: 3}
@@ -5738,7 +5753,7 @@ PrefabInstance:
       propertyPath: m_text
       value: Pada level struktur data ini, terdapat daftar angka. Setiap angka yang
         kamu dapatkan akan tampil pada daftar angka ini. Kamu dapat melihat daftar
-        angka pada bagian atas layar.
+        angka ini pada bagian atas layar.
       objectReference: {fileID: 0}
     - target: {fileID: 8758220423257716591, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
         type: 3}

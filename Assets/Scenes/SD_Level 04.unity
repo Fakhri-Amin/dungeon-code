@@ -5603,16 +5603,32 @@ PrefabInstance:
     - target: {fileID: 352075899718833799, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
         type: 3}
       propertyPath: m_text
-      value: 'Blok perintah ini memiliki fungsi yang sama dengan Dequeue pada bahasa
-        pemrograman.
+      value: 'Queue bersifat FIFO ( First in first out) yaitu data yang pertama masuk
+        akan pertama kali keluar.
 
 
-        Queue bersifat FIFO ( First in first out) yaitu data
-        yang pertama masuk akan pertama kali keluar.
+        Ketika elemen masuk ke dalam queue, dinamakan
+        Enqueue. Ketika elemen keluar dari queue, dinamakan Dequeue.
 
 
-        Dequeue [dibaca dekyu]
-        berfungsi mengeluarkan elemen pertama yang masuk ke dalam antrian.'
+        Dequeue
+        [dibaca dekyu] berfungsi mengeluarkan elemen pertama yang masuk ke dalam
+        queue atau antrian.
+
+
+        Sehingga, blok perintah Dequeue ini memiliki
+        fungsi yang sama yaitu untuk mengeluarkan angka pertama yang ada di daftar
+        angka.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 352075899718833799, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 28.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 352075899718833799, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28.9
       objectReference: {fileID: 0}
     - target: {fileID: 691932737076102500, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
         type: 3}
@@ -6253,7 +6269,7 @@ PrefabInstance:
     - target: {fileID: 5572725195892145989, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -153.21567
+      value: -153.21565
       objectReference: {fileID: 0}
     - target: {fileID: 5598071426041724613, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
         type: 3}

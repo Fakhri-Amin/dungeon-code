@@ -6047,16 +6047,31 @@ PrefabInstance:
     - target: {fileID: 352075899718833799, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
         type: 3}
       propertyPath: m_text
-      value: 'Blok perintah ini memiliki fungsi yang sama dengan Pop pada struktur
-        data.
+      value: 'Stack bersifat LIFO (Last in first out) yang artinya data yang terakhir
+        masuk adalah data yang pertama keluar.
 
 
-        Stack bersifat LIFO (Last in first out) yang artinya data
-        yang terakhir masuk adalah data yang pertama keluar.
+        Ketika elemen masuk ke dalam
+        kumpulan data, dinamakan Push. Ketika elemen keluar dari kumpulan data, dinamakan
+        Pop.
 
 
-        Pop ini berfungsi
-        untuk mengeluarkan elemen pada bagian teratas atau terakhir.'
+        Pop berfungsi mengeluarkan elemen terakhir pada stack atau
+        tumpukan.
+
+
+        Sehingga, blok perintah pop ini memiliki fungsi yang
+        sama yaitu untuk mengeluarkan angka terakhir yang ada di daftar angka.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 352075899718833799, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 28.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 352075899718833799, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28.9
       objectReference: {fileID: 0}
     - target: {fileID: 691932737076102500, guid: 9f302b6e95a1a3d4fb2b9cf7185a6bb7,
         type: 3}
